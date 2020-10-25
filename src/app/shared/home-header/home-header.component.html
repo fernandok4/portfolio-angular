@@ -1,0 +1,14 @@
+<div class="menu">
+  <a class="menu-bars" (click)="openMenu()">
+    <fa-icon [icon]="faBars"></fa-icon>
+  </a>
+  <div class="items-menu" #itemsMenu>
+    <div *ngFor="let menuItem of menuItems">
+      <a [routerLink]="[menuItem.route]">
+        <div class="item-menu" [id]="menuItem.id" [ngClass]="{'active': menuItem.active}">
+          <fa-icon [icon]="menuItem.icon"></fa-icon>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

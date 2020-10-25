@@ -1,2 +1,5 @@
 <app-home-header></app-home-header>
-<router-outlet></router-outlet>
+<app-mini-kana-character></app-mini-kana-character>
+<main [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+</main>

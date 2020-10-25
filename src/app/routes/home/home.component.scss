@@ -1,0 +1,15 @@
+.full-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--primary-color1);
+}
+
+.full-name{
+    position: absolute;
+    left: 100px;
+    top: 25vh;
+
+    h1{
+        font-size: 3.5em;
+    }
+}

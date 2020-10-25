@@ -3,3 +3,7 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 @import 'app/shared/theme/theme.scss';
+
+html{
+    overflow: hidden;
+}
