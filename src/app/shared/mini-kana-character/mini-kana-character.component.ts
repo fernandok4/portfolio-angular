@@ -1,6 +1,8 @@
+import { sanitizeIdentifier } from '@angular/compiler';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { throws } from 'assert';
+import { Subscription } from 'rxjs';
 import { CharacterComponent } from './character/character.component';
+import { MiniKanaCharacterService } from './mini-kana-character.service';
 
 @Component({
   selector: 'app-mini-kana-character',
@@ -10,13 +12,32 @@ import { CharacterComponent } from './character/character.component';
 export class MiniKanaCharacterComponent implements OnInit {
 
   @ViewChild('character') character: CharacterComponent
-
-  constructor() { }
+  private characterActionSubscribe: Subscription
+  private mapAction
+  constructor(private miniKanaCharacterService: MiniKanaCharacterService) { }
 
   ngOnInit() {
+    this.characterActionSubscribe = this.miniKanaCharacterService.characterActionSubscribe.subscribe(this.handleAction)
+    this.createMapAction()
   }
 
-  move = (side: 'left' | 'right', steps: string) => {
+  ngOnDestroy(){
+    this.characterActionSubscribe.unsubscribe()
+  }
+
+  private createMapAction = () => {
+    this.mapAction = {
+      "MOVE": this.move
+    }
+  }
+
+  private handleAction = (eventOptions) => {
+    let functionName = this.mapAction[eventOptions.type]
+    functionName(eventOptions)
+  }
+
+  private move = (eventOptions) => {
+    let { side, steps } = eventOptions
     if(!this.stepFormatValidation(steps)) throw ("Invalid step format, it need to be in viewport width format")
     let stepsViewportWidthValue = this.stepViewportWidthValue(steps)
     let stepsPixelValue = this.convertViewportWidthToPixel(stepsViewportWidthValue) * (side == 'left' ? -1 : 1)
@@ -28,7 +49,7 @@ export class MiniKanaCharacterComponent implements OnInit {
   private stepViewportWidthValue = (text: string): number => Number(text.match(/\d+/g)[0])
 
   private convertViewportWidthToPixel = (stepsViewportWidthValue: number) => {
-    const screenSize = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+    const screenSize = document.documentElement.clientWidth
     return (stepsViewportWidthValue / 100) * screenSize
   }
 }

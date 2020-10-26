@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fader } from 'src/app/route-animation';
+import { MiniKanaCharacterService } from 'src/app/shared/mini-kana-character/mini-kana-character.service';
 
 @Component({
   selector: 'app-home',
@@ -11,9 +12,10 @@ import { fader } from 'src/app/route-animation';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private miniKanaCharacterService: MiniKanaCharacterService) { }
 
   ngOnInit() {
+    this.miniKanaCharacterService.move("right", '30vw')
   }
 
 }

@@ -1,9 +1,6 @@
-.character{
-    height: 200px;
-    width: 100px;
-    background-color: red;
+.canvas{
+    background-color: transparent;
     position: absolute;
-    bottom: 150px;
-    left: 80px;
     z-index: 10000;
+    pointer-events: none;
 }
