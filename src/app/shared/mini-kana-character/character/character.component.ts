@@ -62,10 +62,11 @@ class Character {
   movePixels = (pixels: number) => {
     this.context.clearRect(this.x, this.y, this.width, this.height)
     let directionFactor = pixels > 0 ? 1 : -1
-    this.x += this.speed * directionFactor
+    let necessaryMove = Math.min(Math.abs(this.speed), Math.abs(pixels))
+    this.x += necessaryMove * directionFactor
     this.redraw()
     if(Number(pixels.toFixed(0)) != 0){
-      window.requestAnimationFrame(_ => this.movePixels(pixels + (this.speed * -directionFactor)))
+      window.requestAnimationFrame(_ => this.movePixels(pixels + (necessaryMove * -directionFactor)))
     }
   }
 }
