@@ -8,17 +8,19 @@ import { HomeComponent } from './routes/home/home.component';
 import { HomeHeaderComponent } from './shared/home-header/home-header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { SkillsComponent } from './routes/skills/skills.component';
 import { ContactComponent } from './routes/contact/contact.component';
 import { MiniKanaCharacterModule } from './shared/mini-kana-character/mini-kana-character.module';
+import { AboutComponent } from './routes/about/about.component';
+import { TimelineModule } from './shared/timeline/timeline.module';
+import { MglTimelineModule } from 'angular-mgl-timeline';
 
 @NgModule({
   declarations: [	
       AppComponent,
       HomeComponent,
       HomeHeaderComponent,
-      SkillsComponent,
-      ContactComponent
+      ContactComponent,
+      AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,9 @@ import { MiniKanaCharacterModule } from './shared/mini-kana-character/mini-kana-
     AppRoutingModule,
     FontAwesomeModule,
     BsDropdownModule.forRoot(),
-    MiniKanaCharacterModule
+    MiniKanaCharacterModule,
+    TimelineModule,
+    MglTimelineModule
   ],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule]
