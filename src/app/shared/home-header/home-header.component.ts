@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { faBars, faHome, faChartBar, faBlog, faPhone, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Component, OnInit, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { faBars, faHome, faBlog, faPhone, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Router, NavigationEnd } from '@angular/router';
-
+// <i class="fas fa-user"></i>
 @Component({
   selector: 'app-home-header',
   templateUrl: './home-header.component.html',
@@ -19,9 +19,9 @@ export class HomeHeaderComponent implements OnInit {
     },
     {
       tooltip: 'Habilidades',
-      icon: faChartBar,
-      id: 'skill',
-      route: '/skills'
+      icon: faUser,
+      id: 'about',
+      route: '/about'
     },
     {
       tooltip: 'Blog',
@@ -38,9 +38,18 @@ export class HomeHeaderComponent implements OnInit {
   ]
   selectedMenuItem: MenuItems
   @ViewChild('itemsMenu') itemsMenu: ElementRef
+  @ViewChild('allMenu') allMenu: ElementRef
 
   openMenu = () => {
     this.itemsMenu.nativeElement.style.display = this.itemsMenu.nativeElement.style.display == 'block' ? 'none' : 'block'
+  }
+
+  @HostListener('document:click', ['$event'])
+  closeMenu = (event) => {
+    // If click is outside from menu close menu items
+    if(!this.allMenu.nativeElement.contains(event.target)) {
+      this.itemsMenu.nativeElement.style.display = 'none'
+    }
   }
 
   constructor(private router: Router) { }
@@ -57,6 +66,7 @@ export class HomeHeaderComponent implements OnInit {
       const actual = this.menuItems.find((item) => item.route == event.urlAfterRedirects)
       actual.active = true
       this.selectedMenuItem = actual
+      this.itemsMenu.nativeElement.style.display = 'none'
     }
   }
 

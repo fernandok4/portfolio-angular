@@ -39,7 +39,7 @@ export class CharacterComponent implements OnInit {
   }
 
   private createCharacter = () => {
-    this.character = new Character(this.context, 80, this.canvas.nativeElement.height - 150, 100, 100)
+    this.character = new Character(this.context, -150, this.canvas.nativeElement.height - 250, 100, 200)
   } 
 
   move = (pixels: number) => {

@@ -1,9 +1,9 @@
-<div class="menu">
+<div class="menu" #allMenu>
   <a class="menu-bars" (click)="openMenu()">
     <fa-icon [icon]="faBars"></fa-icon>
   </a>
   <div class="items-menu" #itemsMenu>
-    <div *ngFor="let menuItem of menuItems">
+    <div *ngFor="let menuItem of menuItems" class="item-menu-parent">
       <a [routerLink]="[menuItem.route]">
         <div class="item-menu" [id]="menuItem.id" [ngClass]="{'active': menuItem.active}">
           <fa-icon [icon]="menuItem.icon"></fa-icon>

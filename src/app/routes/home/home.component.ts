@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.miniKanaCharacterService.move("right", '30vw')
+      this.miniKanaCharacterService.move("right", '70vw')
     }, 500)
   }
 }
