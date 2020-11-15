@@ -1,0 +1,12 @@
+input[type="text"], textarea, input[type="submit"]{
+    display: grid;
+    width: 100%;
+    resize: none;
+    border-radius: 5px;
+    padding: 5px;
+    border: #00000030 solid 2px;
+}
+
+input[type="combobox"]{
+    margin: auto;
+}

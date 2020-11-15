@@ -1,0 +1,20 @@
+<div class="timeline" *ngIf="options" (window:resize)="onWindowResize()">
+  <div *ngFor="let event of options.events; let i = index" #eventsDiv>
+    <div class="timeline-event" (click)="changeEventDescription(i)" [ngClass]="{'active': i == selectedEventIndex, 'disabled': i != selectedEventIndex}"></div>
+    <div [ngClass]="{'timeline-date-event-odd': i % 2 == 1, 'timeline-date-event-even': i % 2 == 0}">
+      <span (click)="changeEventDescription(i)">{{event.date}}</span>
+    </div>
+    <div class="connector" [ngStyle]="line[i]"></div>
+  </div>
+</div>
+<div class="event-description" [ngClass]="{'event-end': eventStateChanged, 'event-start': !eventStateChanged}" 
+    [ngStyle]="options.animationOptions">
+  <div>
+    <h3 class="event-description-title">
+      {{options.events[selectedDescriptionEventIndex].name}}
+    </h3>
+    <p class="event-description-paragraph">
+      {{options.events[selectedDescriptionEventIndex].description}}
+    </p>
+  </div>
+</div>

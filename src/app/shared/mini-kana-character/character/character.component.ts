@@ -27,7 +27,7 @@ export class CharacterComponent implements OnInit {
 
   redrawCanvas = () => {
     this.initCanvas()
-    this.character.redraw()
+    this.character.updatePositionAndRedraw()
   }
 
   updateCanvas = () => {
@@ -49,14 +49,26 @@ export class CharacterComponent implements OnInit {
 
 class Character {
 
-  private speed = 2
+  private speed = 3
+  private windowHeight = 0
+  private windowWidth = 0
 
   constructor(private context: CanvasRenderingContext2D, private x: number, private y: number, private width: number, private height: number){
+    this.windowHeight = window.innerHeight
+    this.windowWidth = window.innerWidth
     this.context.fillRect(this.x, this.y, this.width, this.height)
   }
 
   redraw = () => {
     this.context.fillRect(this.x, this.y, this.width, this.height)
+  }
+
+  updatePositionAndRedraw = () => {
+    this.x = (this.x * window.innerWidth) / this.windowWidth
+    this.y = (this.y * window.innerHeight) / this.windowHeight
+    this.windowHeight = window.innerHeight
+    this.windowWidth = window.innerWidth
+    this.redraw()
   }
 
   movePixels = (pixels: number) => {

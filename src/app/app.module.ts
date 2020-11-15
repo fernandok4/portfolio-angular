@@ -12,7 +12,7 @@ import { ContactComponent } from './routes/contact/contact.component';
 import { MiniKanaCharacterModule } from './shared/mini-kana-character/mini-kana-character.module';
 import { AboutComponent } from './routes/about/about.component';
 import { TimelineModule } from './shared/timeline/timeline.module';
-import { MglTimelineModule } from 'angular-mgl-timeline';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [	
@@ -25,12 +25,12 @@ import { MglTimelineModule } from 'angular-mgl-timeline';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    NgSelectModule,
     AppRoutingModule,
     FontAwesomeModule,
     BsDropdownModule.forRoot(),
     MiniKanaCharacterModule,
-    TimelineModule,
-    MglTimelineModule
+    TimelineModule
   ],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule]

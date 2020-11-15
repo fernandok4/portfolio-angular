@@ -1,4 +1,4 @@
-<div class="menu" #allMenu>
+<!-- <div class="menu" #allMenu>
   <a class="menu-bars" (click)="openMenu()">
     <fa-icon [icon]="faBars"></fa-icon>
   </a>
@@ -11,4 +11,17 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
+
+<nav class="navbar navbar-expand-sm classic-navbar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <fa-icon [icon]="faBars"></fa-icon>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active classic-navbar-items" *ngFor="let menuItem of menuItems">
+        <a [routerLink]="[menuItem.route]" [ngClass]="{'active': menuItem.active}" [id]="menuItem.id">{{menuItem.name}}</a>
+      </li>
+    </ul>
+  </div>
+</nav>

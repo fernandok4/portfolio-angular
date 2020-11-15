@@ -1,7 +1,57 @@
 <div class="full-container">
-    <div class="contact-info">
-        <h1>
-            Entre em Contato!
-        </h1>
+    <div class="contact-form">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="contact-info">
+                    <h1>Vamos nos conectar</h1>
+                    <p>
+                        Preencha o formulário ao lado para que possamos nos conectar! Ou entre em contato através das redes sociais
+                    </p>
+                    <p>
+                        Ou entre em contato através das redes sociais
+                    </p>
+                    <p>
+                        Estarei na espera!
+                    </p>
+                </div>
+                <div class="social-networks">
+                    <a href="https://github.com/fernandok4" target="_blank"><fa-icon [icon]="faGithubSquare"></fa-icon></a>
+                    <a href="https://www.linkedin.com/in/fernandokanashiro/" target="_blank"><fa-icon [icon]="faLinkedin"></fa-icon></a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <form class="form-group contact-form-group">
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            Nome Completo: 
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            Email: 
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            Motivo do contato:
+                            <ng-select [items]="emailTypeList" placeholder="Selecione"></ng-select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-left">
+                            Como posso te ajudar? 
+                            <textarea></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <input type="submit" name="topic" value="Enviar">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </div>

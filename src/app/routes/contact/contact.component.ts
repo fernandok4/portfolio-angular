@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { fader } from 'src/app/route-animation';
+import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-contact',
@@ -10,6 +11,27 @@ import { fader } from 'src/app/route-animation';
   ]
 })
 export class ContactComponent implements OnInit {
+
+  emailTypeList = [{
+    value: "question",
+    label: "Dúvidas"
+  },
+  {
+    value: "services",
+    label: "Serviços"
+  },
+  {
+    value: "job",
+    label: "Interesse de Contratação"
+  },
+  {
+    value: "others",
+    label: "Outros"
+  }]
+  faGithubSquare = faGithubSquare
+  faLinkedin = faLinkedin
+// <i class="fab fa-linkedin"></i>
+  // <i class="fab fa-github-square"></i>
 
   constructor() { }
 

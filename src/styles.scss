@@ -2,8 +2,21 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @import 'app/shared/theme/theme.scss';
+@import 'app/shared/theme/input.scss';
 
 html{
     overflow: hidden;
+
+    @media screen and (max-width: 576px) {
+        overflow-y: scroll!important;
+    }
 }
+
+app-mini-kana-character{
+    @media screen and (max-width: 576px) {
+        display: none;
+    }
+}
+

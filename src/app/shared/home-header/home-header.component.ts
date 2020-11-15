@@ -12,45 +12,31 @@ export class HomeHeaderComponent implements OnInit {
   faBars: IconDefinition = faBars
   menuItems: Array<MenuItems> = [
     {
-      tooltip: 'Home',
+      name: 'Início',
       icon: faHome,
       id: 'home',
       route: '/home'
     },
     {
-      tooltip: 'Habilidades',
+      name: 'Sobre',
       icon: faUser,
       id: 'about',
       route: '/about'
     },
     {
-      tooltip: 'Blog',
+      name: 'Blog',
       icon: faBlog,
       id: 'blog',
-      route: '/home'
+      route: '/blog'
     },
     {
-      tooltip: 'Contato',
+      name: 'Contato',
       icon: faPhone,
       id: 'contact',
       route: '/contact'
     },
   ]
   selectedMenuItem: MenuItems
-  @ViewChild('itemsMenu') itemsMenu: ElementRef
-  @ViewChild('allMenu') allMenu: ElementRef
-
-  openMenu = () => {
-    this.itemsMenu.nativeElement.style.display = this.itemsMenu.nativeElement.style.display == 'block' ? 'none' : 'block'
-  }
-
-  @HostListener('document:click', ['$event'])
-  closeMenu = (event) => {
-    // If click is outside from menu close menu items
-    if(!this.allMenu.nativeElement.contains(event.target)) {
-      this.itemsMenu.nativeElement.style.display = 'none'
-    }
-  }
 
   constructor(private router: Router) { }
 
@@ -66,7 +52,6 @@ export class HomeHeaderComponent implements OnInit {
       const actual = this.menuItems.find((item) => item.route == event.urlAfterRedirects)
       actual.active = true
       this.selectedMenuItem = actual
-      this.itemsMenu.nativeElement.style.display = 'none'
     }
   }
 
@@ -74,14 +59,14 @@ export class HomeHeaderComponent implements OnInit {
 
 export class MenuItems{
   icon: IconDefinition = undefined;
-  tooltip: String = '';
+  name: String = '';
   id: String = '';
   route: String = '';
   active?: Boolean = false;
 
-  constructor(icon, tooltip, id, route){
+  constructor(icon, name, id, route){
     this.icon = icon
-    this.tooltip = tooltip
+    this.name = name
     this.id = id
     this.route = route
   }

@@ -1,0 +1,76 @@
+<app-mini-kana-character></app-mini-kana-character>
+<div class="full-container">
+    <div class="main-painel">
+        <div *ngIf="slidePage == 0" class="content-painel">
+            <div class="about-painel right">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h2>
+                            Sobre mim
+                        </h2>
+                        <p>
+                            Cresci admirando a ciencias exatas e seus campos, mas a que mais me encanta é a que envolve a tecnologia. Isso tem sido desde os meus 16 anos quando comecei o Curso Tecnico de Programação de Jogos Digitais e meus caros, eu, lhes digo, considero como uma das mais importantes escolhas da minha vida.
+                        </p>
+                        <p>
+                            Pois bem, mas quem é Fernando Kanashiro? Bom, eu diria que sou amigavel, empenhado, determinado, inteligente, amante da tecnologia, com vontade de aprender e me encanta a ideia de poder ensinar e propagar conhecimento. Para os mais próximos vão perceber que idealizo meios de poder ensinar o que sei.
+                        </p>
+                        <p>
+                            Mas para você que chegou a esse site, sou um profissional incrivel e que ama a profissão que escolheu. Se empenha ao máximo para poder entregar o melhor resultado, atuando tanto com backend quanto com frontend.  
+                        </p>
+                    </div>
+                    <div class="col-lg-4 about-photo">
+                        <div class="polaroid-format">
+                            <div class="photo">
+                                <img src="/assets/img/about/about-photo1.jpg" alt="image">
+                            </div>
+                            <div class="description">
+                                <h1>Fernando Kanashiro</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="slidePage == 1" class="content-painel">
+            <div class="skills-painel left">
+                <h2 class="col-lg-12">
+                    Habilidades
+                </h2>
+                <div class="row">
+                    <div class="col-lg-6 text-center">
+                        <h3>Front-End</h3>
+                        <h4>HTML5/CSS3</h4>
+                        <h4>SASS</h4>
+                        <h4>JavaScript/TypeScript</h4>
+                        <h4>Angular</h4>
+                        <h4>Sites Responsivos</h4>
+                    </div>
+                    <div class="col-lg-6 text-center">
+                        <h3>Back-End</h3>
+                        <h4>Kotlin, Java, Node.js</h4>
+                        <h4>PostgreSQL, MySQL</h4>
+                        <h4>Web Crawler</h4>
+                    </div>
+                    <div class="col-lg-12 text-center skills-objective">
+                        <h4>Para melhor te atender!</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="slidePage == 2" class="content-painel">
+            <div class="timeline-painel">
+                <h2 class="col-lg-12">
+                    Linha do Tempo
+                </h2>
+                <app-timeline [options]="timelineOptions"></app-timeline>
+            </div>
+        </div>
+    </div>
+    <div class="slide-pages">
+        <div class="slide-page" [ngClass]="{'active': slidePage == 0}" (click)="changePage(0)"></div>
+        <div class="slide-page" [ngClass]="{'active': slidePage == 1}" (click)="changePage(1)"></div>
+        <div class="slide-page" [ngClass]="{'active': slidePage == 2}" (click)="changePage(2)"></div>
+    </div>
+    <div class="page-arrow left" (click)="previousPage()"><fa-icon [icon]="faAngleLeft"></fa-icon></div>
+    <div class="page-arrow right" (click)="nextPage()"><fa-icon [icon]="faAngleRight"></fa-icon></div>
+</div>
