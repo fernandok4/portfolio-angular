@@ -30,8 +30,6 @@ export class ContactComponent implements OnInit {
   }]
   faGithubSquare = faGithubSquare
   faLinkedin = faLinkedin
-// <i class="fab fa-linkedin"></i>
-  // <i class="fab fa-github-square"></i>
 
   constructor() { }
 
