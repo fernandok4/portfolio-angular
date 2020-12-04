@@ -1,9 +1,40 @@
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss']
+  styleUrls: ['./timeline.component.scss'],
+  animations: [
+    trigger('eventState', [
+      state('active', style({
+        backgroundColor: '#e9e9e9'
+      })),
+      state('disable', style({
+        backgroundColor: '#212121'
+      })),
+      transition('active => disable', [
+        animate('1s')
+      ]),
+      transition('disable => active', [
+        animate('1s')
+      ]),
+    ]),
+    trigger('eventDescriptionState', [
+      state('active', style({
+        opacity: 1
+      })),
+      state('disable', style({
+        opacity: 0
+      })),
+      transition('active => disable', [
+        animate('1s')
+      ]),
+      transition('disable => active', [
+        animate('1s')
+      ]),
+    ]),
+  ]
 })
 export class TimelineComponent implements OnInit {
 
@@ -19,8 +50,9 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.getLineWidthSize()
-    }, 20)
+      this.selectedEventIndex = 0;
+      this.getLineWidthSize();
+    }, 10)
   }
 
   private getLineWidthSize = () => {

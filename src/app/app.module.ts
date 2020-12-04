@@ -10,17 +10,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ContactComponent } from './routes/contact/contact.component';
 import { MiniKanaCharacterModule } from './shared/mini-kana-character/mini-kana-character.module';
-import { AboutComponent } from './routes/about/about.component';
 import { TimelineModule } from './shared/timeline/timeline.module';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { AboutModule } from './routes/about/about.module';
 
 @NgModule({
   declarations: [	
       AppComponent,
       HomeComponent,
       HomeHeaderComponent,
-      ContactComponent,
-      AboutComponent
+      ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     FontAwesomeModule,
     BsDropdownModule.forRoot(),
     MiniKanaCharacterModule,
-    TimelineModule
+    TimelineModule,
+    AboutModule
   ],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule]

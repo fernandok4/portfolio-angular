@@ -32,38 +32,10 @@
             </div>
         </div>
         <div *ngIf="slidePage == 1" class="content-painel">
-            <div class="skills-painel left">
-                <h2 class="col-lg-12">
-                    Habilidades
-                </h2>
-                <div class="row">
-                    <div class="col-lg-6 text-center">
-                        <h3>Front-End</h3>
-                        <h4>HTML5/CSS3</h4>
-                        <h4>SASS</h4>
-                        <h4>JavaScript/TypeScript</h4>
-                        <h4>Angular</h4>
-                        <h4>Sites Responsivos</h4>
-                    </div>
-                    <div class="col-lg-6 text-center">
-                        <h3>Back-End</h3>
-                        <h4>Kotlin, Java, Node.js</h4>
-                        <h4>PostgreSQL, MySQL</h4>
-                        <h4>Web Crawler</h4>
-                    </div>
-                    <div class="col-lg-12 text-center skills-objective">
-                        <h4>Para melhor te atender!</h4>
-                    </div>
-                </div>
-            </div>
+            <app-about-skill></app-about-skill>
         </div>
         <div *ngIf="slidePage == 2" class="content-painel">
-            <div class="timeline-painel">
-                <h2 class="col-lg-12">
-                    Linha do Tempo
-                </h2>
-                <app-timeline [options]="timelineOptions"></app-timeline>
-            </div>
+            <app-about-timeline></app-about-timeline>
         </div>
     </div>
     <div class="slide-pages">

@@ -23,26 +23,6 @@ $min-pc-px: 1024px;
             animation-name: timelineEventStart;
             background-color: #dedede; 
         }
-
-        @keyframes timelineEventEnd {
-            from {
-                background-color: #dedede; 
-            }
-        
-            to {
-                background-color: #212121;
-            }
-        }
-        
-        @keyframes timelineEventStart{
-            from {
-                background-color: #212121; 
-            }
-        
-            to {
-                background-color: #dedede;
-            }
-        }
     }
 
     .timeline-date-event-odd{

@@ -23,7 +23,7 @@ $min-pc-px: 1024px;
     }
 
     input[type="submit"]{        
-        background-color: white;
+        background-color: var(--primary-color2-active);
         height: 40px;
         font-size: 18px;
         font-weight: bold;

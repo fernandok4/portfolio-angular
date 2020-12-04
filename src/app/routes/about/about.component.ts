@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { fader } from 'src/app/route-animation';
 import { MiniKanaCharacterService } from 'src/app/shared/mini-kana-character/mini-kana-character.service';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons'
-import { AboutHelper } from './about-helper';
 
 @Component({
   selector: 'app-about',
@@ -17,15 +16,13 @@ export class AboutComponent implements OnInit {
   public slidePage = 0
   public faAngleLeft = faAngleLeft
   public faAngleRight = faAngleRight
-  public timelineOptions = {}
 
-  constructor(private miniKanaCharacterService: MiniKanaCharacterService, private aboutHelper: AboutHelper) { }
+  constructor(private miniKanaCharacterService: MiniKanaCharacterService) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.miniKanaCharacterService.move("right", '15vw')
     }, 500)
-    this.timelineOptions = this.aboutHelper.getTimelineOptions()
   }
 
   public previousPage = () => {

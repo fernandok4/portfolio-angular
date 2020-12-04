@@ -18,11 +18,11 @@ export class ContactComponent implements OnInit {
   },
   {
     value: "services",
-    label: "Serviços"
+    label: "Serviços Freelance"
   },
   {
     value: "job",
-    label: "Interesse de Contratação"
+    label: "Interesse de Contato"
   },
   {
     value: "others",
