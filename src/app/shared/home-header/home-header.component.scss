@@ -33,41 +33,41 @@ fa-icon{
 
             &#home{
                 &.active{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
 
                 &:hover{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
             }
         
             &#about{
                 &.active{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
 
                 &:hover{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
             }
         
             &#blog{
                 &.active{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
 
                 &:hover{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
             }
         
             &#contact{
                 &.active{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
 
                 &:hover{
-                    color: var(--primary-color2-active);
+                    color: var(--primary-color-active);
                 }
             }
         }

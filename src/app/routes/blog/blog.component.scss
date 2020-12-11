@@ -1,5 +1,5 @@
 .full-container{
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--primary-color2);
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color2), var(--primary-color));
 }

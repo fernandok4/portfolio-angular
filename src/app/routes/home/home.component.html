@@ -1,8 +1,12 @@
-<app-mini-kana-character></app-mini-kana-character>
-<div class="full-container">
+<!-- <app-mini-kana-character></app-mini-kana-character> -->
+<div #homeContainer class="full-container">
   <div class="full-name">
     <h1>
       {{currentTypeText}}<span>|</span>
     </h1>
   </div>
+  <video #videoHome width="960" height="540" muted autoplay loop class="video" (timeupdate)="createWaterBubble()">
+    <source src="assets/video/home1.webm" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </div>

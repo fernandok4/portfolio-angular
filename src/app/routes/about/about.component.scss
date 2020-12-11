@@ -4,7 +4,7 @@ $min-pc-px: 1024px;
 .full-container{
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--primary-color2);
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color2), var(--primary-color));
 
     @media screen and (max-width: $mobile-px) {
         height: 100%;

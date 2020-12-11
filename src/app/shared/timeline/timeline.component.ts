@@ -101,9 +101,11 @@ export class TimelineOptions{
 
 export class TimelineEvents{
 
-  constructor(public date: string, public name: string, public description: string){
+  constructor(public date: string, public name: string, public description: string, public photoPath: string, public photoPolaroidDesc: string){
     this.date = date
     this.name = name
     this.description = description
+    this.photoPath = photoPath
+    this.photoPolaroidDesc = photoPolaroidDesc
   }
 }

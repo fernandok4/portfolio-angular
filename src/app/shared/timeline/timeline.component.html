@@ -8,12 +8,24 @@
   </div>
 </div>
 <div class="event-description" [@eventDescriptionState]="eventStateChanged ? 'disable' : 'active'" [ngStyle]="options.animationOptions">
-  <div>
-    <h3 class="event-description-title">
-      {{options.events[selectedDescriptionEventIndex].name}}
-    </h3>
-    <p class="event-description-paragraph">
-      {{options.events[selectedDescriptionEventIndex].description}}
-    </p>
+  <div class="row">
+    <div class="col-lg-8">
+      <h3 class="event-description-title">
+        {{options.events[selectedDescriptionEventIndex].name}}
+      </h3>
+      <p class="event-description-paragraph">
+        {{options.events[selectedDescriptionEventIndex].description}}
+      </p>
+    </div>
+    <div class="col-lg-4" *ngIf="options.events[selectedDescriptionEventIndex].photoPath">
+      <div class="polaroid-format">
+        <div class="photo">
+            <img [src]="options.events[selectedDescriptionEventIndex].photoPath" alt="image">
+        </div>
+        <div class="description">
+            <h1 *ngIf="options.events[selectedDescriptionEventIndex].photoPolaroidDesc">{{options.events[selectedDescriptionEventIndex].photoPolaroidDesc}}</h1>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

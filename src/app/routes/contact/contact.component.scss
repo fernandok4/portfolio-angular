@@ -4,7 +4,7 @@ $min-pc-px: 1024px;
 .full-container{
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--primary-color2);
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color2), var(--primary-color));
 }
 
 .contact-form{
@@ -23,10 +23,9 @@ $min-pc-px: 1024px;
     }
 
     input[type="submit"]{        
-        background-color: var(--primary-color2-active);
+        background-color: var(--primary-color-active);
         height: 40px;
         font-size: 18px;
-        font-weight: bold;
     }
 }
 

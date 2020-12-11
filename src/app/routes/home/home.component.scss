@@ -1,7 +1,10 @@
+$mobile-px: 576px;
+$min-pc-px: 1024px;
+
 .full-container{
     width: 100vw;
     height: 100vh;
-    background-color: var(--primary-color2);
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-color2), var(--primary-color));
 }
 
 .full-name{
@@ -9,11 +12,11 @@
     padding-top: 25vh;
     text-align: left;
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: $min-pc-px) {
         padding-left: 20px;
     }
 
-    @media screen and (max-width: 576px) {
+    @media screen and (max-width: $mobile-px) {
         text-align: center;
         padding-left: 0;
         padding-top: 10vh;
@@ -22,7 +25,7 @@
     h1{
         font-size: 3em;
 
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: $mobile-px) {
             font-size: 2em;
         }
     }
@@ -30,8 +33,67 @@
     h2{
         font-size: 2em;
 
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: $mobile-px) {
             font-size: 1.5em;
+        }
+    }
+}
+
+.video{
+    position: fixed;
+    filter: opacity(0.3);
+    // left: 50vw;
+    bottom: -30px;
+    right: 0;
+
+    @media screen and (max-width: $mobile-px) {
+        font-size: 1.5em;
+        right: -50vw;
+    }
+}
+
+.bubbles{
+    div{
+        border-radius: 50%;
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.0), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+        height: 200px;
+        position: absolute;
+        width: 200px;
+        animation-name: bubbleBottomToTop;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+    animation-name: bubbleLeftAndRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    
+    @keyframes bubbleLeftAndRight {
+        from {
+            transform: translateX(0px);
+        }
+
+        33%{
+            transform: translateX(-40px);
+        }
+
+        66%{
+            transform: translateX(40px);
+        }
+    
+        to {
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes bubbleBottomToTop {
+        from{
+            transform: translateY(0px);
+        }
+
+        to{
+            transform: translateY(-1000px);
         }
     }
 }

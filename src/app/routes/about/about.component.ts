@@ -20,9 +20,6 @@ export class AboutComponent implements OnInit {
   constructor(private miniKanaCharacterService: MiniKanaCharacterService) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.miniKanaCharacterService.move("right", '15vw')
-    }, 500)
   }
 
   public previousPage = () => {
