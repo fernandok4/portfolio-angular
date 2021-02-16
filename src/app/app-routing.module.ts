@@ -4,6 +4,7 @@ import { HomeComponent } from './routes/home/home.component';
 import { ContactComponent } from './routes/contact/contact.component';
 import { AboutComponent } from './routes/about/about.component';
 import { BlogComponent } from './routes/blog/blog.component';
+import { PostComponent } from './routes/post/post.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'blog', component: BlogComponent
+  },
+  {
+    path: 'blog/post/:fileName', component: PostComponent
   },
   {
     path: 'about', component: AboutComponent

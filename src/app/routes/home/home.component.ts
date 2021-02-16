@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
   private startCharacterMove = () => {
     setTimeout(() => {
       this.miniKanaCharacterService.move("right", '70vw')
-      console.log('videoHome', this.videoHome)
     }, 500)
   }
 
@@ -63,7 +62,22 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private undoLetter = (nextLetter, text) => {
+  private typeTextAndMaintain = async () => {
+    for(let i = 0; i < this.typeTextList.length; i++){
+      let text = this.typeTextList[i]
+      while(this.currentLetter < text.length){
+        this.mode = 'type'
+        let nextLetter = text[this.currentLetter]
+        let functionName = this.modeMapFunction[this.mode]
+        await this[functionName](nextLetter, text)
+        await this.sleepType(this.modeMapSpeedMs[this.mode])
+      }
+      this.currentTypeText += "<br>"
+      this.currentLetter = 0
+    }
+  }
+
+  private undoLetter = (nextLetter: string, text: string) => {
     this.currentLetter -= 1
     this.currentTypeText = this.currentTypeText.split("").splice(0, this.currentLetter).join("")
     if(!this.currentTypeText){
@@ -71,7 +85,7 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  private typeLetter = async (nextLetter, text) => {
+  private typeLetter = async (nextLetter: string, text: string) => {
     this.currentTypeText = this.currentTypeText + nextLetter
     this.currentLetter += 1
     if(this.currentLetter == text.length){

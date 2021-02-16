@@ -1,0 +1,8 @@
+<div class="full-container">
+  <div class="content-container">
+    <span class="go-back-button" (click)="goBackToBlog()"><fa-icon [icon]="faAngleLeft"></fa-icon></span>
+    <markdown [data]="content"></markdown>
+    <p class="post-author">{{postInfo.author}}</p>
+    <p class="post-insert-date">{{postInfo.insertDate}}</p>
+  </div>
+</div>

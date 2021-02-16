@@ -46,10 +46,14 @@ export class HomeHeaderComponent implements OnInit {
 
   onRouteChange = (event) => {
     if(event instanceof NavigationEnd){
+      let newUrlAfterRedirect = this.menuItems.find(item => item.route == event.urlAfterRedirects)
+      if(!newUrlAfterRedirect){
+        return
+      }
       if(this.selectedMenuItem){
         this.selectedMenuItem.active = false
       }
-      const actual = this.menuItems.find((item) => item.route == event.urlAfterRedirects)
+      const actual = newUrlAfterRedirect
       actual.active = true
       this.selectedMenuItem = actual
     }

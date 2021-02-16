@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MiniKanaCharacterModule } from 'src/app/shared/mini-kana-character/mini-kana-character.module';
 import { TimelineModule } from 'src/app/shared/timeline/timeline.module';
@@ -15,7 +14,6 @@ import { AboutComponent } from './about.component';
         AboutTimelineComponent
     ],
     imports: [
-        BrowserModule,
         CommonModule,
         FontAwesomeModule,
         TimelineModule,

@@ -68,6 +68,7 @@ $min-pc-px: 1024px;
     animation-duration: 2s;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    position: absolute;
     
     @keyframes bubbleLeftAndRight {
         from {

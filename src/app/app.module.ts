@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './routes/home/home.component';
@@ -13,13 +12,19 @@ import { MiniKanaCharacterModule } from './shared/mini-kana-character/mini-kana-
 import { TimelineModule } from './shared/timeline/timeline.module';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { AboutModule } from './routes/about/about.module';
+import { BlogComponent } from './routes/blog/blog.component';
+import { MarkdownModule } from 'ngx-markdown';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './routes/post/post.component';
 
 @NgModule({
   declarations: [	
       AppComponent,
       HomeComponent,
       HomeHeaderComponent,
-      ContactComponent
+      ContactComponent,
+      BlogComponent, 
+      PostComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +35,9 @@ import { AboutModule } from './routes/about/about.module';
     BsDropdownModule.forRoot(),
     MiniKanaCharacterModule,
     TimelineModule,
-    AboutModule
+    AboutModule,
+    HttpClientModule,
+    MarkdownModule.forRoot({ loader: HttpClient })
   ],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule]
