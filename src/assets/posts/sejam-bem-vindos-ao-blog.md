@@ -7,7 +7,7 @@ title: "Sejam bem vindos ao Blog!"
 
 # Sejam bem vindos ao Blog!
 
-<img src="assets/img/posts/sejam-bem-vindos-ao-blog/img1.jpg" alt="Fernando Kanashiro" width="75%" />
+<img src="assets/img/posts/sejam-bem-vindos-ao-blog/img1.jpg" alt="Fernando Kanashiro" width="100%"/>
 
 Olá meus caros, tudo bom? Espero que sim… Essa é uma nova etapa de minha vida, na qual sonhei por alguns meses, até enfim, tomar coragem e aqui estou, conversando pela primeira vez com vocês  e imaginando uma forte e duradoura amizade e troca de experiencias! 
 
@@ -17,4 +17,4 @@ E para vocês, nessa nova jornada, levanto vôo em meus sonhos de poder comparti
 
 Sendo assim, é com essa mensagem que iremos desbravar juntos esse mundo. Eu aprendendo de você e você (talvez) aprendendo de mim! Espero que gostem do conteúdo e deixo aqui o convite para entrarem em contato comigo através de minhas redes sociais ou por e-mail para sugestões, baterem um papo ou até mesmo feedback! Pois, como um instrutor me disse uma vez, “feedback antecipado é ouro”!
 
-<img src="assets/img/posts/sejam-bem-vindos-ao-blog/img2.gif" alt="Fernando Kanashiro" width="75%" />
+<img src="assets/img/posts/sejam-bem-vindos-ao-blog/img2.gif" alt="Fernando Kanashiro" width="100%"/>
