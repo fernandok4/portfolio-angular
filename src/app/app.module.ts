@@ -16,6 +16,7 @@ import { BlogComponent } from './routes/blog/blog.component';
 import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './routes/post/post.component';
+import { BlogPostCardComponent } from './routes/blog/blog-post-card/blog-post-card.component';
 
 @NgModule({
   declarations: [	
@@ -24,7 +25,8 @@ import { PostComponent } from './routes/post/post.component';
       HomeHeaderComponent,
       ContactComponent,
       BlogComponent, 
-      PostComponent
+      PostComponent,
+      BlogPostCardComponent
   ],
   imports: [
     BrowserModule,

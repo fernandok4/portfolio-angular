@@ -1,6 +1,9 @@
 import { Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { fader } from 'src/app/route-animation';
 import { MiniKanaCharacterService } from 'src/app/shared/mini-kana-character/mini-kana-character.service';
+import * as jsonPosts from 'src/assets/posts/posts.json'  
+
 
 @Component({
   selector: 'app-home',
@@ -12,6 +15,7 @@ import { MiniKanaCharacterService } from 'src/app/shared/mini-kana-character/min
 })
 export class HomeComponent implements OnInit {
 
+  public posts = []
   private typeTextList = [
     "Olá, sou Fernando Kanashiro",
     "Desenvolvedor Full Stack",
@@ -33,12 +37,13 @@ export class HomeComponent implements OnInit {
   @ViewChild('homeContainer') homeContainer;
   private bubbles = []
 
-  constructor(private miniKanaCharacterService: MiniKanaCharacterService, private renderer: Renderer2) { }
+  constructor(private miniKanaCharacterService: MiniKanaCharacterService, private renderer: Renderer2, private router: Router) { }
 
   ngOnInit() {
     this.startCharacterMove()
     this.typeText()
     this.verifyBubbles()
+    this.getPostsFromDirectory()
   }
 
   private startCharacterMove = () => {
@@ -131,5 +136,20 @@ export class HomeComponent implements OnInit {
         }
       }
     }, 10000)
+  }
+
+  getPostsFromDirectory = () => {
+    let posts = []
+    try{
+      posts = (jsonPosts as any).default
+      posts = posts.sort((a, b) => b.id - a.id)
+    } catch(e){
+      console.error("Houve um erro ao capturar os posts", e)
+    }
+    this.posts = posts
+  }
+
+  openPostContent = (post) => {
+    this.router.navigate(["blog/post", post.fileName])
   }
 }

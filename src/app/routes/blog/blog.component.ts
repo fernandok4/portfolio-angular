@@ -21,6 +21,7 @@ export class BlogComponent implements OnInit {
     let posts = []
     try{
       posts = (jsonPosts as any).default
+      posts = posts.sort((a, b) => b.id - a.id)
     } catch(e){
       console.error("Houve um erro ao capturar os posts", e)
     }

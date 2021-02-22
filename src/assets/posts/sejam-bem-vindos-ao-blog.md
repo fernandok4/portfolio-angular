@@ -3,6 +3,7 @@ insertDate: "16/02/2021 16:10"
 author: "Fernando Kanashiro"
 image: "assets/img/posts/sejam-bem-vindos-ao-blog/img1.jpg"
 title: "Sejam bem vindos ao Blog!"
+id: 1
 ---
 
 # Sejam bem vindos ao Blog!

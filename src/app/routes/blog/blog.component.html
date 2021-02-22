@@ -2,13 +2,7 @@
   <h1 class="title-page">Postagens</h1>
   <div class="row post-cards">
     <div *ngFor="let post of posts" class="col-xl-4 col-lg-6" (click)="openPostContent(post)">
-      <div class="post-card">
-        <div class="post-image">
-          <img src="{{post.image}}">
-        </div>
-        <h5>{{post.title}}</h5>
-        <p class="insert-date-post">{{post.insertDate}}</p>
-      </div>
+      <app-blog-post-card [post]="post"></app-blog-post-card>
     </div>
   </div>
 </div>
