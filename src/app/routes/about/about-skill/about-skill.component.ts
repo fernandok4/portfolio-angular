@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ArcRotateCamera, Axis, Camera, Color4, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Space, StandardMaterial, Vector3 } from 'babylonjs';
+import { ArcRotateCamera, Camera, Color4, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Vector3 } from 'babylonjs';
 import * as GUI from 'babylonjs-gui'
 
 @Component({
