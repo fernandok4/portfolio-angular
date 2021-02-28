@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ArcRotateCamera, Camera, Color4, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, StandardMaterial, Vector3 } from 'babylonjs';
+import { ArcRotateCamera, Axis, Camera, Color4, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Space, StandardMaterial, Vector3 } from 'babylonjs';
 import * as GUI from 'babylonjs-gui'
 
 @Component({
@@ -14,6 +14,7 @@ export class AboutSkillComponent implements OnInit {
   private scene: Scene
   private camera: Camera
   private sphereRadius = 1.5
+  private sphere: Mesh;
   private skills: Array<string> = ["HTML5", 'CSS3', 'JavaScript', 'TypeScript', 'Angular', 'Bootstrap', 
     'Kotlin', 'Java', 'Node.js', 'Spring Framework', 'MySQL', 'PostgreSQL', 'Docker', 'Selenium', 'Web Services',
     'Crawler', 'JPA/Hibernate', 'JSON', 'Git'
@@ -35,29 +36,30 @@ export class AboutSkillComponent implements OnInit {
     this.engine = new Engine(this.skillCanvas.nativeElement)
     this.createScene()
     this.createCamera()
-    this.camera.attachControl(this.skillCanvas, true);
+    this.camera.attachControl(this.skillCanvas, true)
     this.createLight()
   }
   
   private createScene = () => {
-    this.scene = new Scene(this.engine);
+    this.scene = new Scene(this.engine)
     this.scene.clearColor = new Color4(0, 0, 0, 0)
   }
 
   private createLight = () => {
-    const light = new HemisphericLight("light", new Vector3(1, 1, 1), this.scene);
+    const light = new HemisphericLight("light", new Vector3(1, 1, 1), this.scene)
     light.intensity = 0.8
   }
 
   private createCamera = () => {
-    let arcRotateCamera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 4, new Vector3(0, 0, 0), this.scene);
+    let arcRotateCamera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 4, new Vector3(0, 0, 0), this.scene)
     arcRotateCamera.wheelDeltaPercentage = 0
     arcRotateCamera.wheelPrecision = 99
     this.camera = arcRotateCamera
   }
 
   private createReferenceSphere = () => {
-    return MeshBuilder.CreateSphere("sphere", {diameter: this.sphereRadius * 2});
+    this.sphere = MeshBuilder.CreateSphere("sphere", {diameter: this.sphereRadius * 2})
+    return this.sphere
   }
 
   private getSpherePoints = (arrayHeight, sphere) => {
@@ -94,22 +96,19 @@ export class AboutSkillComponent implements OnInit {
 
   private createTextMesh = (points) => {
     for(let i = 0; i < this.skills.length; i++){
-      var plane = Mesh.CreatePlane("plane", 2, this.scene);
+      var plane = Mesh.CreatePlane("plane", 2, this.scene)
+      plane.parent = this.sphere
       plane.position = points[i]
-      plane.billboardMode = BABYLON.Mesh.BILLBOARDMODE_ALL;
-      var advancedTexture = GUI.AdvancedDynamicTexture.CreateForMesh(plane);
-      var text = new GUI.TextBlock("teste", this.skills[i]);
+      plane.billboardMode = BABYLON.Mesh.BILLBOARDMODE_ALL
+      var advancedTexture = GUI.AdvancedDynamicTexture.CreateForMesh(plane)
+      var text = new GUI.TextBlock("text", this.skills[i])
       text.fontSize = 60
-      advancedTexture.addControl(text);
+      advancedTexture.addControl(text)
     }
   }
 
-  private teste = () => {
-    
-  }
-
   private getAbsoluteVectorPosition = (vector, rotation, sphere) => {
-    let spherePositive = MeshBuilder.CreateSphere("sphere", {diameter: 0.1});
+    let spherePositive = MeshBuilder.CreateSphere("sphere", {diameter: 0.1})
     spherePositive.setPositionWithLocalVector(vector)
     spherePositive.setPivotMatrix(sphere.getPivotMatrix())
     spherePositive.rotateAround(sphere.getPivotPoint(), new Vector3(0, 1, 0), this.degreesToRadians(rotation))
