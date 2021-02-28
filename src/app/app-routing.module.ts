@@ -11,9 +11,6 @@ const routes: Routes = [
     path: '', redirectTo: 'home', pathMatch: 'full'
   },
   {
-    path: '**', redirectTo: 'home'
-  },
-  {
     path: 'home', component: HomeComponent
   },
   {
@@ -27,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'about', component: AboutComponent
+  },
+  {
+    path: '**', redirectTo: 'home'
   },
 ];
 
