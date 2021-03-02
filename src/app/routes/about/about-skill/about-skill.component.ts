@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ArcRotateCamera, Camera, Color4, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Vector3 } from 'babylonjs';
+import { ArcRotateCamera, AutoRotationBehavior, Camera, Color4, Engine, HemisphericLight, Mesh, MeshBuilder, Scene, Vector3 } from 'babylonjs';
 import * as GUI from 'babylonjs-gui'
 
 @Component({
@@ -35,8 +35,7 @@ export class AboutSkillComponent implements OnInit {
   private createContext = () => {
     this.engine = new Engine(this.skillCanvas.nativeElement)
     this.createScene()
-    this.createCamera()
-    this.camera.attachControl(this.skillCanvas, true)
+    this.createCamera()    
     this.createLight()
   }
   
@@ -55,6 +54,10 @@ export class AboutSkillComponent implements OnInit {
     arcRotateCamera.wheelDeltaPercentage = 0
     arcRotateCamera.wheelPrecision = 99
     this.camera = arcRotateCamera
+    this.camera.attachControl(this.skillCanvas, true)
+    let behavior = new AutoRotationBehavior()
+    behavior.idleRotationSpeed = 0.25
+    this.camera.addBehavior(behavior)
   }
 
   private createReferenceSphere = () => {
