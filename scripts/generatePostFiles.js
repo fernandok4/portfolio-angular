@@ -5,10 +5,7 @@ getFileWithoutExtension = (fileName) => fileName.split(".")[0]
 
 fs.readdir("src/assets/posts", async (err, fileNames) => {
     let arrayPosts = []
-    await fileNames.map(fileName => {
-        if(fileName == "posts.json"){
-            return
-        }
+    await fileNames.filter(fileName => fileName != "posts.json").map(fileName => {
         let bufferedData = fs.readFileSync(`src/assets/posts/${fileName}`)
         stringData = bufferedData.toString('utf-8')
         let metadata = metadataParser(stringData)
