@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "blog-fernando-ka-1611520540861": {
+      "hosting": {
+        "portfolio-angular": [
+          "blog-fernando-ka-1611520540861"
+        ]
+      }
+    }
+  }
+}

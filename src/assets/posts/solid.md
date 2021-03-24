@@ -1,14 +1,14 @@
 ---
 insertDate: "23/03/2021 19:00"
 author: "Fernando Kanashiro"
-image: "assets/img/posts/solid/solid-title.png"
+image: "assets/img/posts/solid/solid-title.jpg"
 title: "SOLID"
 id: 2
 ---
 
 # SOLID
 
-<img src="assets/img/posts/solid/solid-title.png" class="max-width-fixed" alt="" width="100%"/>
+<img src="assets/img/posts/solid/solid-title.jpg" class="max-width-fixed" alt="" width="100%"/>
 
 Caso já tenha estudado sobre programação orientada a objetos, provavelmente, já deve ter ouvido falar sobre o SOLID, foi assim que acabei conhecendo o que ele era. Ou, até mesmo, em alguma vaga que passou pela sua linha do tempo do LinkedIn e que apareceu que seria desejado o conhecimento dessas siglas. Mas afinal, o que de fato significa essas siglas e qual sua importância para a programação orientada a objetos?
 
