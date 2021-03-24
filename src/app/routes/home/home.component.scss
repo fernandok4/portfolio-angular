@@ -104,12 +104,12 @@ h2{
     text-align: left;
 
     @media screen and (max-width: $min-pc-px) {
-        padding-left: 20px;
+        padding: 0;
     }
 
     @media screen and (max-width: $mobile-px) {
         text-align: center;
-        padding-left: 0;
+        padding: 0;
     }
 
     h2{
