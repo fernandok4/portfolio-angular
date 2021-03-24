@@ -45,6 +45,8 @@ testem.log
 .DS_Store
 Thumbs.db
 
+# Enviroment Variables
+firebase-config.json
 
 # Posts
 src/assets/posts/posts.json

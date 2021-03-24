@@ -17,6 +17,9 @@ import { MarkdownModule } from 'ngx-markdown';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './routes/post/post.component';
 import { BlogPostCardComponent } from './routes/blog/blog-post-card/blog-post-card.component';
+import { AngularFireModule } from '@angular/fire';
+import * as firebaseConfig from 'firebase-config.json'
+import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 
 @NgModule({
   declarations: [	
@@ -29,6 +32,8 @@ import { BlogPostCardComponent } from './routes/blog/blog-post-card/blog-post-ca
       BlogPostCardComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(((firebaseConfig as any).default)),
+    AngularFireAnalyticsModule,
     BrowserModule,
     BrowserAnimationsModule,
     NgSelectModule,
@@ -39,9 +44,14 @@ import { BlogPostCardComponent } from './routes/blog/blog-post-card/blog-post-ca
     TimelineModule,
     AboutModule,
     HttpClientModule,
-    MarkdownModule.forRoot({ loader: HttpClient })
+    MarkdownModule.forRoot({ loader: HttpClient }),
   ],
   bootstrap: [AppComponent],
   exports: [BsDropdownModule]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(){
+    console.log(firebaseConfig)
+  }
+}

@@ -47,8 +47,21 @@ $mobile-px: 576px;
             text-align: justify;
         }
 
-        img {
+        img.max-width-fixed {
             max-width: 480px;
+        }
+
+        code.language-kotlin {
+            display: inline-block;
+            min-width: 100%;
+            text-align: left;
+            background-color: #d2eeff;
+            padding: 5px;
+            border: gray solid 1px;
+        }
+
+        h2, h3, h4, h5, h6, h7, li {
+            text-align: left;
         }
     }
 }

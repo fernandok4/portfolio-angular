@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FirebaseApp } from '@angular/fire';
 import { RouterOutlet } from '@angular/router'
 import { fader } from './route-animation';
 

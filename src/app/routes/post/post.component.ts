@@ -4,6 +4,7 @@ import { MarkdownService } from 'ngx-markdown';
 import { fader } from 'src/app/route-animation';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 import * as jsonPosts from 'src/assets/posts/posts.json'  
+import { AngularFireAnalytics } from '@angular/fire/analytics';
 
 @Component({
   selector: 'app-post',
@@ -20,7 +21,8 @@ export class PostComponent implements OnInit {
   public content: string = ""
   public faAngleLeft = faAngleLeft;
 
-  constructor(private route: ActivatedRoute, private markdownService: MarkdownService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private markdownService: MarkdownService, private router: Router, 
+    private angularAnalytics: AngularFireAnalytics){}
 
   ngOnInit() {
     this.route.params.subscribe(parameters => {
@@ -39,6 +41,7 @@ export class PostComponent implements OnInit {
     let content = ""
     try{
       content = await this.markdownService.getSource(this.postInfo.path).toPromise()
+      this.angularAnalytics.logEvent('select_content', {content_type: "blog_post", content_id: this.postInfo.path})
     }catch(e){
       throw ("Ocorreu um erro para trazer o conteudo do post.")
     }
