@@ -7,8 +7,10 @@
   </div>
   <div class="last-blog-posts">
     <h1>Últimas Postagens</h1>
-    <div *ngFor="let post of posts" class="col-xl-4 col-lg-6" (click)="openPostContent(post)">
-      <app-blog-post-card [post]="post"></app-blog-post-card>
+    <div class="row">
+      <div *ngFor="let post of posts" class="col-xl-4 col-lg-6" (click)="openPostContent(post)">
+        <app-blog-post-card [post]="post"></app-blog-post-card>
+      </div>
     </div>
     <h2>
       <a [routerLink]="'/blog'">Ver mais</a>

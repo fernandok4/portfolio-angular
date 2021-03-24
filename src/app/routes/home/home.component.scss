@@ -100,8 +100,7 @@ h2{
 }
 
 .last-blog-posts{
-    padding-left: 100px;
-    padding-top: 50px;
+    padding: 100px 50px;
     text-align: left;
 
     @media screen and (max-width: $min-pc-px) {
