@@ -1,14 +1,14 @@
 ---
 insertDate: "23/03/2021 22:54"
 author: "Fernando Kanashiro"
-image: "assets/img/posts/solid/solid-title.jpg"
+image: "assets/posts/img/solid/solid-title.jpg"
 title: "SOLID"
 id: 2
 ---
 
 # SOLID
 
-<img src="assets/img/posts/solid/solid-title.jpg" class="max-width-fixed" alt="" width="100%"/>
+<img src="assets/posts/img/solid/solid-title.jpg" class="max-width-fixed" alt="" width="100%"/>
 
 Caso já tenha estudado sobre programação orientada a objetos, provavelmente, já deve ter ouvido falar sobre o SOLID, foi assim que acabei conhecendo o que ele era. Ou, até mesmo, em alguma vaga que passou pela sua linha do tempo do LinkedIn e que apareceu que seria desejado o conhecimento dessas siglas. Mas afinal, o que de fato significa essas siglas e qual sua importância para a programação orientada a objetos?
 
@@ -20,7 +20,7 @@ Em um mundo cheio de siglas que é a programação, SOLID surge como um acrônim
 - Interface Segregation Principle (Princípio da Segregação de Interface)
 - Dependency Inversion Principle (Princípio da Inversão de Dependência)
 
-<img src="assets/img/posts/solid/confused.gif" class="max-width-fixed" alt="Meme confuso com os princípios" width="100%"/>
+<img src="assets/posts/img/solid/confused.gif" class="max-width-fixed" alt="Meme confuso com os princípios" width="100%"/>
 
 Ainda assim, pode parecer um pouco assustador, ouvir o nome de todos esses princípios. Mas, não precisa esquentar a cabeça, que nessa postagem explicarei um pouco de cada princípio, um de cada vez, usando um projeto que desenvolvi enquanto estou estudando, de um jogo que eu gosto muito, o xadrez.
 
@@ -32,7 +32,7 @@ Cada uma dessas peças tem uma forma de se movimentar no tabuleiro, por exemplo,
 
 Para processar todo esse jogo de xadrez, eu desenhei para o projeto um mapa dos processos que serão rodados de ponta a ponta e é por meio deles que irei me basear, sendo assim, apresento o kanachess:
 
-<img src="assets/img/posts/solid/KanaChess.png" alt="Desenho do projeto" width="100%"/>
+<img src="assets/posts/img/solid/KanaChess.png" alt="Desenho do projeto" width="100%"/>
 
 Então, para o projeto, já pensando em separar as responsabilidades visualmente para pôr em prática na construção da aplicação, em cor amarela é por onde vou comunicar com o cliente através de WebSocket, na cor azul são os processos que efetivam o movimento recebido e em cor verde é o processamento do estado atual do tabuleiro.
 
@@ -42,7 +42,7 @@ Sendo com esse contexto, que desbravaremos o mundo do SOLID, vamos lá?
 
 Não sei você já deve ter se deparado com uma classe tão grande que dava até medo de mexer. Uma classe que fazia de tudo e mais um pouco. Uma classe, que não só recebe o movimento em PGN (Portable Game Notation), mas também tinha a responsabilidade de verificar se é um movimento valido, processar o movimento recebido, descobrir todos os movimentos possíveis para as peças. É tanta coisa, que até parece uma classe deus.
 
-<img src="assets/img/posts/solid/s_principle.jpg" alt="Desenho do projeto" width="100%"/>
+<img src="assets/posts/img/solid/s_principle.jpg" alt="Desenho do projeto" width="100%"/>
 
 O problema dessa abordagem, é que qualquer alteração/manutenção que tenha de fazer, diversos outros processos podem ser impactados. Por eles, estarem, no mesmo bloco de código, a chance de surgir um bug é muito alta. Fora que a legibilidade do código não é tão clara, e, provavelmente, a alteração seria muito mais difícil de ser feita. 
 
@@ -135,7 +135,7 @@ De todos os princípios acredito que esse é o mais assustador de todos de se le
 
 > Se para cada objeto x1 do tipo S há um objeto x2 do tipo T de tal forma que, para todos os programas P definidos em termos de T, o comportamento de P não muda quando x1 é substituído por x2 então S é um subtipo de T.
 
-<img src="assets/img/posts/solid/calculando.gif" class="max-width-fixed" alt="Desenho do projeto" width="100%"/>
+<img src="assets/posts/img/solid/calculando.gif" class="max-width-fixed" alt="Desenho do projeto" width="100%"/>
 
 Essa de fato é assustador, mas o que de fato Barbara Liskov quis dizer com essa citação é bem simples. **Dependa da classe base e não das classes derivadas**. Pegando como exemplo o caso anterior, em que criamos uma interface para os jogos de xadrez clássico e chess960, os movimentos das peças são os mesmos, a forma como é jogado é o mesmo, a única coisa que muda é o início do jogo. Sendo assim, toda a engine construída para processar o tabuleiro de xadrez é útil! Desde que o nosso processo dependa da classe base que no nosso caso é a interface `IBoard`.
 
