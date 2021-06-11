@@ -12,6 +12,8 @@ $min-pc-px: 1024px;
         border-radius: 100%;
         background-color: #212121; 
         cursor: pointer;
+        position: relative;
+        z-index: 2;
         
         &.disabled{
             animation-duration: 1s;
@@ -50,7 +52,7 @@ $min-pc-px: 1024px;
     }
 
     .connector{
-        z-index: -1;
+        z-index: 1;
         position: absolute;
     }
 }

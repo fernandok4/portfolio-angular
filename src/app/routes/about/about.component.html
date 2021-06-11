@@ -1,6 +1,9 @@
 <div class="full-container">
     <div class="main-painel">
         <div *ngIf="slidePage == 0" class="content-painel">
+            <app-about-skill></app-about-skill>
+        </div>
+        <div *ngIf="slidePage == 1" class="content-painel">
             <div class="about-painel right">
                 <div class="row">
                     <div class="col-lg-8">
@@ -30,17 +33,9 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="slidePage == 1" class="content-painel">
-            <app-about-skill></app-about-skill>
-        </div>
         <div *ngIf="slidePage == 2" class="content-painel">
             <app-about-timeline></app-about-timeline>
         </div>
-    </div>
-    <div class="slide-pages">
-        <div class="slide-page" [ngClass]="{'active': slidePage == 0}" (click)="changePage(0)"></div>
-        <div class="slide-page" [ngClass]="{'active': slidePage == 1}" (click)="changePage(1)"></div>
-        <div class="slide-page" [ngClass]="{'active': slidePage == 2}" (click)="changePage(2)"></div>
     </div>
     <div class="page-arrow left" (click)="previousPage()"><fa-icon [icon]="faAngleLeft"></fa-icon></div>
     <div class="page-arrow right" (click)="nextPage()"><fa-icon [icon]="faAngleRight"></fa-icon></div>

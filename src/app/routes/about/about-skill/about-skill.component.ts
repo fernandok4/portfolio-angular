@@ -50,7 +50,7 @@ export class AboutSkillComponent implements OnInit {
   }
 
   private createCamera = () => {
-    let arcRotateCamera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 4, new Vector3(0, 0, 0), this.scene)
+    let arcRotateCamera = new ArcRotateCamera("camera", -Math.PI / 2, Math.PI / 2.5, 10, new Vector3(0, 0, 0), this.scene)
     arcRotateCamera.wheelDeltaPercentage = 0
     arcRotateCamera.wheelPrecision = 99
     this.camera = arcRotateCamera

@@ -52,6 +52,5 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 export class AppModule { 
 
   constructor(){
-    console.log(firebaseConfig)
   }
 }
