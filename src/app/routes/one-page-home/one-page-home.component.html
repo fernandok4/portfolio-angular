@@ -1,0 +1,43 @@
+<div>
+  <div class="home-modules">
+    <div class="modules">
+      <div class="module" (click)="navigationOnClick(about)">
+        Sobre Mim
+      </div>
+      <div class="module" (click)="navigationOnClick(skill)">
+        Habilidades
+      </div>
+      <div class="module" (click)="navigationOnClick(timeline)">
+        Linha do Tempo
+      </div>
+      <div class="module" (click)="navigationOnClick(about)">
+        Blog
+      </div>
+    </div>
+  </div>
+</div>
+<div #about id="about">
+  <div class="title">
+    Sobre Mim
+  </div>
+  <div>
+    <div class="about-description">
+      <p>Cresci admirando a ciências exatas e seus campos, mas a que mais me encanta é a que envolve a tecnologia. Isso tem sido desde os meus 16 anos quando comecei o Curso Técnico de Programação de Jogos Digitais e meus caros, eu, lhes digo, considero como uma das mais importantes escolhas da minha vida.</p>
+      <p>Pois bem, mas quem é Fernando Kanashiro? Bom, eu diria que sou amigável, empenhado, determinado, inteligente, amante da tecnologia, com vontade de aprender e me encanta a ideia de poder ensinar e propagar conhecimento. Para os mais próximos vão perceber que idealizo meios de poder ensinar o que sei.</p>
+      <p>Mas para você que chegou a esse site, sou um profissional incrível e que ama a profissão que escolheu. Se empenha ao máximo para poder entregar o melhor resultado, atuando tanto com backend quanto com frontend.</p>
+      <p>Prazer esse sou eu!</p>
+    </div>
+  </div>
+</div>
+<div id="skill" #skill>
+  <div class="title">
+    Habilidades
+  </div>
+  <app-about-skill-one-page></app-about-skill-one-page>
+</div>
+<div id="timeline" #timeline>
+  <div class="title">
+    Linha do Tempo
+  </div>
+  <app-about-timeline-beauty></app-about-timeline-beauty>
+</div>

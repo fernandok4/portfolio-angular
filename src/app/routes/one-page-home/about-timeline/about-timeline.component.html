@@ -1,0 +1,27 @@
+<div #timeline class="timeline" (window:resize)="onResize()">
+  <div class="event-body" *ngFor="let eventTimeline of eventsTimeline">
+    <div #event class="event" [ngClass]="{'active': eventTimeline.active}" (click)="selectEvent(eventTimeline)">
+      {{eventTimeline.date}}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 event-description">
+    <h1>
+      {{selectedEvent.title}}
+    </h1>
+    <p *ngFor="let paragraph of selectedEvent.description">
+      {{paragraph}}
+    </p>
+  </div>
+  <div class="col-md-4 polaroid-section">
+    <div class="polaroid-format">
+      <div class="photo">
+          <img [src]="selectedEvent.photoPath" alt="image">
+      </div>
+      <div class="description">
+          <h1 *ngIf="selectedEvent.photoPolaroidDesc">{{selectedEvent.photoPolaroidDesc}}</h1>
+      </div>
+    </div>
+  </div>
+</div>

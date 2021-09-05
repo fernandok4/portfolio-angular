@@ -1,0 +1,10 @@
+#skillCanvas{
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+
+    @media screen and (max-width: 1080px) {
+        pointer-events: none; 
+    }
+}
