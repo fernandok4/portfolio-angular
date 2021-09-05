@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node scripts/generatePostFiles.js && ng serve",
-    "build": "node scripts/generatePostFiles.js && ng build --prod",
+    "build": "node scripts/generatePostFiles.js && ng build --prod --base-href='https://fernandok4.github.io/portfolio-angular/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
