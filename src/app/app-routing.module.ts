@@ -5,10 +5,11 @@ import { ContactComponent } from './routes/contact/contact.component';
 import { AboutComponent } from './routes/about/about.component';
 import { BlogComponent } from './routes/blog/blog.component';
 import { PostComponent } from './routes/post/post.component';
+import { OnePageHomeComponent } from './routes/one-page-home/one-page-home.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: 'home', pathMatch: 'full'
+    path: '', redirectTo: 'new-home', pathMatch: 'full'
   },
   {
     path: 'home', component: HomeComponent
@@ -24,6 +25,9 @@ const routes: Routes = [
   },
   {
     path: 'about', component: AboutComponent
+  },
+  {
+    path: 'new-home', component: OnePageHomeComponent
   },
   {
     path: '**', redirectTo: 'home'

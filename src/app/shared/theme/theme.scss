@@ -1,6 +1,8 @@
 :root {
-    --primary-color: #6CBDF5;
-    --primary-color2: #4AC8EE;
+    --primary-color: #68BBE3;
+    --primary-color2: #0E86D4;
+    --primary-color3: #055C9D;
+    --primary-color4: #003060;
     // --primary-color: #3EF0C0;
     // --primary-color2: #89f1d6;
     --primary-color-active: #3087B9;
@@ -9,3 +11,10 @@
 body{
     font-family: 'Ubuntu', sans-serif;
 }
+
+
+
+SELECT 
+    COALESCE(MIN(id_point), 0) AS dtReference
+FROM tb_bar_one_day 
+WHERE id_stock = {idStock} AND tp_bar = 1

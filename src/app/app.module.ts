@@ -20,6 +20,9 @@ import { BlogPostCardComponent } from './routes/blog/blog-post-card/blog-post-ca
 import { AngularFireModule } from '@angular/fire';
 import * as firebaseConfig from 'firebase-config.json'
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
+import { OnePageHomeComponent } from './routes/one-page-home/one-page-home.component';
+import { AboutSkillOnePageComponent } from './routes/one-page-home/about-skill/about-skill.component';
+import { AboutTimelineBeautyComponent } from './routes/one-page-home/about-timeline/about-timeline.component';
 
 @NgModule({
   declarations: [	
@@ -29,7 +32,10 @@ import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
       ContactComponent,
       BlogComponent, 
       PostComponent,
-      BlogPostCardComponent
+      BlogPostCardComponent, 
+      OnePageHomeComponent, 
+      AboutSkillOnePageComponent,
+      AboutTimelineBeautyComponent
   ],
   imports: [
     AngularFireModule.initializeApp(((firebaseConfig as any).default)),
